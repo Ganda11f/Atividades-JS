@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Lista</h1>
+
+<ul id="list">
+  <li>Café</li>
+  <li>Chá</li>
+</ul>
+
+<label for="text">Digite o texto: </label>
+<input type="text" id="texto">
+<br>
+<label for="esc">Cores: </label>
+
+<input type="radio" id="cor1" name="cor" value="blue">
+<label for="cor1">Azul</label>
+<input type="radio" id="cor2" name="cor" value="red">
+<label for="cor2">Vermelho</label>
+<input type="radio" id="cor3" name="cor" value="green">
+<label for="cor3">Verde</label>
+
+<br>
+<button onclick="myFunction()">enviar</button>
+
+<script>
+function myFunction() {
+
+    let texto = String(document.getElementById("texto").value);
+    let cor = document.querySelector('input[name="cor"]:checked').value;
+
+const node = document.createElement("li");
+
+const textnode = document.createTextNode(texto);
+
+node.appendChild(textnode);
+
+document.getElementById("list").appendChild(node);
+document.getElementById("list").appendChild(node).style.color = cor;
+}
+</script>
+
+</body>
+</html>
